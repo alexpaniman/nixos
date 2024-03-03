@@ -89,13 +89,20 @@ rec {
 
     shellAliases = 
       let
-        nixos-home-dir = "~/nixos/home";
-        nixos-conf-dir = "~/nixos/conf";
+        nixos-dir      = "~/nixos";
+        nixos-home-dir = "${nixos-dir}/home";
+        nixos-conf-dir = "${nixos-dir}/conf";
+
+        make-nixos-commit-cmd =
+          msg: "(cd ${nixos-dir}; git add . && git commit -m '${msg}' && git push) || true";
       in
       {
+        push-nixos-generation = (make-nixos-commit-cmd "update: automatic generation save");
+        push-nixos-bumps = (make-nixos-commit-cmd "update: automatic flake.lock version bumps");
+
         update-home = "(cd ${nixos-home-dir}; nix flake update)";
         update-conf = "(cd ${nixos-conf-dir}; nix flake update)";
-        update      = "update-conf && update-home";
+        update      = "push-nixos-generation && update-conf && update-home && push-nixos-bumps";
 
         upgrade-home = "home-manager switch --flake ${nixos-home-dir}#${home.username}";
         upgrade-conf = "sudo nixos-rebuild switch --flake ${nixos-conf-dir}#default";
