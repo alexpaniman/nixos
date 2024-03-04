@@ -226,6 +226,7 @@
     neofetch
     fastfetch
     pv
+    brave
     # feh
   ];
 
