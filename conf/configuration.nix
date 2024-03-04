@@ -115,7 +115,10 @@
           blur = true;
         };
       };
-      sessionCommands = "nitrogen --restore";
+      sessionCommands = ''
+        nitrogen --restore
+        xset r rate 300 50
+      '';
     };
     desktopManager = {
       xterm.enable = false;
