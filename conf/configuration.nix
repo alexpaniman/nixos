@@ -96,9 +96,14 @@
   services.xserver = {
     enable = true;
     autorun = true;
+
     xkb.layout = "us,ru";
     xkb.model = "pc105";
     xkb.options = "grp:menu_toggle";
+
+    autoRepeatDelay = 300;
+    autoRepeatInterval = 20;
+
     videoDrivers = [ "nvidia" ];
     windowManager = {
       xmonad = {
@@ -115,10 +120,7 @@
           blur = true;
         };
       };
-      sessionCommands = ''
-        nitrogen --restore
-        xset r rate 300 50
-      '';
+      sessionCommands = "nitrogen --restore";
     };
     desktopManager = {
       xterm.enable = false;
