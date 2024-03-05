@@ -236,6 +236,8 @@
     brave
     # feh
     tty-clock
+    krita
+    gimp
   ];
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
