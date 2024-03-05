@@ -235,6 +235,7 @@
     pv
     brave
     # feh
+    tty-clock
   ];
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
