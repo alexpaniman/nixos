@@ -101,8 +101,8 @@
     xkb.model = "pc105";
     xkb.options = "grp:menu_toggle";
 
-    autoRepeatDelay = 300;
-    autoRepeatInterval = 20;
+    autoRepeatDelay = 200;
+er.xserver.autoRepeatInterval = 100;
 
     videoDrivers = [ "nvidia" ];
     windowManager = {
@@ -181,8 +181,6 @@
     picom
     cmake
     clang
-    clang-tools
-    llvm
     gcc
     steam-run	
     ninja
