@@ -238,6 +238,7 @@
     tty-clock
     krita
     gimp
+    screenkey
   ];
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
