@@ -138,6 +138,34 @@ rec {
     };
   };
 
+  services.picom = {
+    enable = true;
+    backend = "glx";
+    activeOpacity = 1;
+    settings = {
+      blur = true;
+
+      animations = true;
+      animation-stiffness = 300.0;
+      animation-dampening = 35.0;
+      animation-clamping = false;
+      animation-mass = 1;
+      animation-for-workspace-switch-in = "auto";
+      animation-for-workspace-switch-out = "auto";
+      animation-for-open-window = "slide-down";
+      animation-for-menu-window = "none";
+      animation-for-transient-window = "slide-down";
+
+      corner-radius = 12;
+
+      blur-method = "dual_kawase";
+      blur-strength = "10";
+      xinerama-shadow-crop = true;
+    };
+
+    vSync = true;
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
