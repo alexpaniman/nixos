@@ -151,7 +151,7 @@
   
   };
 
-  hardware.pipewire.enable = true;
+  # hardware.pipewire.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
