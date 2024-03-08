@@ -121,8 +121,8 @@
         };
       };
       sessionCommands = ''
-        nitrogen --restore
         ./.screenlayout/current.sh
+        nitrogen --restore
       '';
     };
   };
@@ -138,21 +138,21 @@
   # Enable sound.
   sound.enable = true;
 
- #services.pipewire = {
- #  enable = true;
- #  audio.enable = true;
- #
- #  alsa = {
- #    enable = true;
- #    support32Bit = true;
- #  };
- #
- #  pulse.enable = true;
- #  jack.enable = true;
- #
- #};
+  services.pipewire = {
+    enable = true;
+    audio.enable = true;
+  
+    alsa = {
+      enable = true;
+      support32Bit = true;
+    };
+  
+    pulse.enable = true;
+    jack.enable = true;
+  
+  };
 
-  hardware.pulseaudio.enable = true;
+  hardware.pipewire.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
