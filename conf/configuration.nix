@@ -136,7 +136,7 @@
 
 
   # Enable sound.
-  # sound.enable = true;
+  sound.enable = true;
 
   security.rtkit.enable = true;
   services.pipewire = {
@@ -247,6 +247,7 @@
     gimp
     screenkey
     cached-nix-shell
+    pulseaudio
   ];
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
