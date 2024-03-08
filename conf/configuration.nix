@@ -136,9 +136,11 @@
 
 
   # Enable sound.
-  sound.enable = true;
+  sound.enable = false;
+  hardware.pulseaudio.enable = false;
 
   security.rtkit.enable = true;
+
   services.pipewire = {
     enable = true;
     alsa = {
@@ -147,6 +149,7 @@
     };
     pulse.enable = true;
     # jack.enable = true;
+    wireplumber.enable = true;
   };
 
   # hardware.pipewire.enable = true;
