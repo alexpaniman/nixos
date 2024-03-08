@@ -239,6 +239,7 @@
     krita
     gimp
     screenkey
+    cached-nix-shell
   ];
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
