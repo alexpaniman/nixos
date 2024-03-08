@@ -145,10 +145,8 @@
       enable = true;
       support32Bit = true;
     };
-  
     pulse.enable = true;
-    jack.enable = true;
-  
+    # jack.enable = true;
   };
 
   # hardware.pipewire.enable = true;
