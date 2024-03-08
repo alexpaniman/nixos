@@ -120,15 +120,10 @@
           blur = true;
         };
       };
-      sessionCommands = "nitrogen --restore";
-    };
-    desktopManager = {
-      xterm.enable = false;
-      xfce = {
-        enable = true;
-        noDesktop = true;
-        enableXfwm = false;
-      };
+      sessionCommands = ''
+        nitrogen --restore
+        ./.screenlayout/current.sh
+      '';
     };
   };
 
@@ -140,11 +135,23 @@
   };
 
 
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
   # Enable sound.
   sound.enable = true;
+
+ #services.pipewire = {
+ #  enable = true;
+ #  audio.enable = true;
+ #
+ #  alsa = {
+ #    enable = true;
+ #    support32Bit = true;
+ #  };
+ #
+ #  pulse.enable = true;
+ #  jack.enable = true;
+ #
+ #};
+
   hardware.pulseaudio.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -168,6 +175,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    zathura
     wget
     firefox
     alacritty
@@ -277,7 +285,6 @@
       output = "DP-2";
       monitorConfig = "Option \"Rotate\" \"right\"";
     }
-  
   ];
 
   programs.zsh.enable = true;
