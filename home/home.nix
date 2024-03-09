@@ -110,6 +110,8 @@ rec {
         upgrade = "upgrade-home && upgrade-conf";
 
         upd = "update && upgrade";
+
+        ls = "${pkgs.eza}/bin/eza";
       };
 
     history.size = 1000000;
