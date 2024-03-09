@@ -249,6 +249,7 @@
     screenkey
     cached-nix-shell
     pulseaudio
+    comma
   ];
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
