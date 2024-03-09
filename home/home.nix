@@ -137,7 +137,7 @@ rec {
         mods = "Control|Shift";
         chars = "SpawnNewInstance";
       }];
-    }
+    };
   };
 
 
