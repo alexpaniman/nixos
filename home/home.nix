@@ -111,7 +111,7 @@ rec {
         upd = "update && upgrade";
       };
 
-    history.size = 10000;
+    history.size = 1000000;
     history.path = "${config.xdg.dataHome}/zsh/history";
 
     oh-my-zsh = {
@@ -119,8 +119,13 @@ rec {
       plugins = [ "git" ];
       theme = "robbyrussell";
     };
+
+    initExtra = ''
+      source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
+    '';
   };
 
+  programs.command-not-found.enable = false;
 
   programs.emacs = {
     enable = true;
