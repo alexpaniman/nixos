@@ -85,6 +85,7 @@ rec {
     initExtra = ''
       bindkey '^H' backward-kill-word
       bindkey '5~' kill-word
+      source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
     '';
 
     shellAliases = 
@@ -119,10 +120,6 @@ rec {
       plugins = [ "git" ];
       theme = "robbyrussell";
     };
-
-    initExtra = ''
-      source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
-    '';
   };
 
   programs.command-not-found.enable = false;
