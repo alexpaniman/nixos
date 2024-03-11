@@ -250,6 +250,7 @@
     cached-nix-shell
     pulseaudio
     comma
+    jetbrains.idea-community
   ];
 
   environment.etc = {
