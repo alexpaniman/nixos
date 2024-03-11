@@ -251,6 +251,7 @@
     pulseaudio
     comma
     jetbrains.idea-community
+    onlyoffice-bin
   ];
 
   environment.etc = {
