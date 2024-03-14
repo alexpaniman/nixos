@@ -174,84 +174,117 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    zathura
-    wget
-    firefox
+    # The one and only
+    emacs
+
+    # Shell
+    vim # i need a way to fix emacs without... emacs 
     alacritty
-    git 
-    stack
-    jdk
-    unzip
-    rofi
-    btop
-    htop
+    nushell
+    zsh
+
+    # Basic graphical programs
+    firefox
+    brave
+    transmission-gtk
+
+    # Sound
+    pavucontrol
+
+    # Conferencing
+    xournalpp
+    obs-studio
+    zoom-us
+
+    # Messaging
+    telegram-desktop
+
+    # Images
+    imagemagick
+    sxiv
+    inkscape
+    krita
+
+    # Videos
+    mpv
+
+    # Documents
+    texlive.combined.scheme-full
+    onlyoffice-bin
+    zathura
+
+    # Graphical environment
+    rofi 
     picom
-    cmake
+    nitrogen
+
+    # System tools
+    tty-clock
+    ncdu
+    fastfetch
+    btop
+    nvitop
+    screenkey
+    pv
+
+    # Main infrastructure programs
+    git 
+
+    # Basic cmdline tools
+    killall
+    wget
+    unzip
+    unrar
+
+    # Development
+    jdk
+    stack
+
+    gcc
     clang
     clang-tools
-    llvm
-    gcc
-    steam-run	
+    cmake
     ninja
     gnumake
+
     python3
-    glew
-    glfw3
-    telegram-desktop
-    mpv
-    cudatoolkit
-    linuxPackages.nvidia_x11
-    libGLU libGL
-    xorg.libXi xorg.libXmu freeglut
-    xorg.libXext xorg.libX11 xorg.libXv xorg.libXrandr zlib
-    nitrogen
-    nvitop
-    transmission-gtk
-    sxiv
+
+    jetbrains.idea-community
+
+    # Nix tools
+    manix
+
+    home-manager
+
+    comma
+    steam-run	
+
+    cached-nix-shell
+
+
+    # Games
     lutris
-    wine
-    emacs
-    # cutter
-    nushell
-    inkscape
-    zsh
+
+    # Theming
     fluent-gtk-theme
-    texlive.combined.scheme-full
-    zathura
-    glm
-    imagemagick
-    zoom-us
-    obs-studio
+
+    # Screenshots
     flameshot
-    vial
     maim
     xclip
-    unrar
-    killall
-    brave
-    pavucontrol
-    ncdu
-    manix
-    home-manager
-    kitty
-    st
-    xournalpp
-    libtool
-    neofetch
-    fastfetch
-    pv
-    brave
-    # feh
-    tty-clock
-    krita
-    gimp
-    screenkey
-    cached-nix-shell
-    pulseaudio
-    comma
-    jetbrains.idea-community
-    onlyoffice-bin
+
+    # Keyboard
+    vial
+
+
+#   wine
+#   cudatoolkit
+#   linuxPackages.nvidia_x11
+#   libGLU libGL
+#   xorg.libXi xorg.libXmu freeglut
+#   xorg.libXext xorg.libX11 xorg.libXv xorg.libXrandr zlib
+#   glm
+#   cutter
   ];
 
   environment.etc = {
