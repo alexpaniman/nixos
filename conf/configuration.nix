@@ -190,6 +190,7 @@
 
     # Sound
     pavucontrol
+    pulseaudio
 
     # Conferencing
     xournalpp
@@ -281,9 +282,8 @@
 #   cudatoolkit
 #   linuxPackages.nvidia_x11
 #   libGLU libGL
-#   xorg.libXi xorg.libXmu freeglut
-#   xorg.libXext xorg.libX11 xorg.libXv xorg.libXrandr zlib
-#   glm
+#   xorg.libXi xorg.libXmu freeglut xorg.libXext xorg.libX11 xorg.libXv xorg.libXrandr
+#   zlib glm
 #   cutter
   ];
 
