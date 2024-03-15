@@ -135,12 +135,12 @@
   };
 
 
-  # Enable sound.
+  # Disable pulseaudio
   sound.enable = false;
   hardware.pulseaudio.enable = false;
 
+  # Enable pipewire instead
   security.rtkit.enable = true;
-
   services.pipewire = {
     enable = true;
     alsa = {
@@ -152,27 +152,12 @@
     wireplumber.enable = true;
   };
 
-  # hardware.pipewire.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.alex = {
     isNormalUser = true;
     extraGroups = [ "wheel" "audio" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [];
   };
 
-  # pkgs.btop = pkgs.btop.overrideAttrs (oldAttrs: {
-  #   nativeBuildInputs = (oldAttrs.nativeBuildInputs or []) ++ [addOpenGLRunpath];
-  #   postFixup = ''
-  #     addOpenGLRunpath $out/bin/btop
-  #   '';
-  # });
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     # The one and only
     emacs
@@ -276,15 +261,6 @@
 
     # Keyboard
     vial
-
-
-#   wine
-#   cudatoolkit
-#   linuxPackages.nvidia_x11
-#   libGLU libGL
-#   xorg.libXi xorg.libXmu freeglut xorg.libXext xorg.libX11 xorg.libXv xorg.libXrandr
-#   zlib glm
-#   cutter
   ];
 
   environment.etc = {
@@ -312,8 +288,10 @@
   };
 
 
-  hardware.bluetooth.enable = true; # enables support for Bluetooth
-  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
 
   fonts.packages = with pkgs; [
     noto-fonts
@@ -323,18 +301,7 @@
     fira-code
     fira-code-symbols
     fira
-    iosevka-comfy.comfy
-    iosevka-comfy.comfy-duo
-    iosevka-comfy.comfy-fixed
     iosevka-comfy.comfy-motion
-    iosevka-comfy.comfy-motion-duo
-    iosevka-comfy.comfy-motion-fixed
-    iosevka-comfy.comfy-wide
-    iosevka-comfy.comfy-wide-duo
-    iosevka-comfy.comfy-wide-fixed
-    iosevka-comfy.comfy-wide-motion
-    iosevka-comfy.comfy-wide-motion-duo
-    iosevka-comfy.comfy-wide-motion-fixed
   ];
 
   services.xserver.xrandrHeads = [
@@ -352,36 +319,9 @@
   programs.zsh.enable = true;
   users.users.alex.shell = pkgs.zsh;
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  # Open all the ports by disabling the firewall altogether
+  networking.firewall.enable = false;
 
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-
-  networking.firewall = {
-    enable = false;
-    allowedTCPPorts = [ 80 443 ];
-  }; 
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-
-  # NOTE: Doesn't work with flakes, so I disabled it:
-  # system.copySystemConfiguration = true;
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
