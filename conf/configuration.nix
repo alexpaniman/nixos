@@ -246,7 +246,7 @@
     steam-run	
 
     cached-nix-shell
-
+    any-nix-shell
 
     # Games
     lutris

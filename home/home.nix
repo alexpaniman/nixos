@@ -86,6 +86,7 @@ rec {
       bindkey '^H' backward-kill-word
       bindkey '5~' kill-word
       source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
+      any-nix-shell zsh --info-right | source /dev/stdin
     '';
 
     shellAliases = 
