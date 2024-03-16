@@ -124,6 +124,13 @@ rec {
     };
   };
 
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+
+    nix-direnv.enable = true;
+  };
+
   programs.command-not-found.enable = false;
 
   programs.emacs = {
