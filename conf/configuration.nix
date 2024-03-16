@@ -245,7 +245,9 @@
     comma
     steam-run	
 
+    direnv
     cached-nix-shell
+
     any-nix-shell
 
     # Games
