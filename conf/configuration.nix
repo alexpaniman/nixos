@@ -263,6 +263,9 @@
 
     # Keyboard
     vial
+
+    glm
+    cglm
   ];
 
   environment.etc = {
