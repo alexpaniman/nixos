@@ -101,6 +101,7 @@ rec {
           msg: "(cd ${nixos-dir}; git add . && git commit -m '${msg}' && git push) || true";
       in
       {
+        # nixos updating & upgrading aliases
         push-nixos-generation = (make-nixos-commit-cmd "update: automatic generation save");
         push-nixos-bumps = (make-nixos-commit-cmd "update: automatic flake.lock version bumps");
 
@@ -114,7 +115,11 @@ rec {
 
         upd = "update && upgrade";
 
+        # navigation
         ls = "${pkgs.eza}/bin/eza";
+
+        ff = ''cd "''$(${pkgs.fd}/bin/fd | ${pkgs.fzf}/bin/fzf | xargs dirname)"'';
+        fh = ''cd ~ && ff'';
       };
 
     history.size = 1000000;
