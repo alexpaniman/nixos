@@ -213,6 +213,9 @@
     screenkey
     pv
 
+    man-pages
+    man-pages-posix
+
     # Main infrastructure programs
     git 
 
@@ -267,6 +270,10 @@
     glm
     cglm
   ];
+
+
+  documentation.dev.enable = true;
+
 
   environment.etc = {
     "xdg/user-dirs.defaults".text = ''
