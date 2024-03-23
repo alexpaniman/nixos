@@ -163,7 +163,7 @@ rec {
       keyboard.bindings = [{
         key = "Return";
         mods = "Control|Shift";
-        chars = "SpawnNewInstance";
+        action = "SpawnNewInstance";
       }];
     };
   };
