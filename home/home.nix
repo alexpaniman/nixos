@@ -120,6 +120,8 @@ rec {
 
         ff = ''cd "''$(${pkgs.fd}/bin/fd | ${pkgs.fzf}/bin/fzf | xargs dirname)"'';
         fh = ''cd ~ && ff'';
+
+        e = "emacsclient --create-frame --no-wait --alternate-editor=''";
       };
 
     history.size = 1000000;
