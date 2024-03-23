@@ -222,11 +222,11 @@ rec {
       blur-strength = "10";
 
       # Picom developers did the stupidest thing ever by adding a rule to EXclude things from background blur,
-      # but not to INclude windows that for background blur. So it goes like that: you enable blur and for some
+      # but not to INclude windows for background blur. So it goes like that: you enable blur and for some
       # time everything seems fine, until you launch, let's say, a screenshoter, that now blurs your whole
       # entire screen and you can't see anything, which is quite important for taking screenshots..
 
-      # And yeah, it's picom's doing. How to get around it? Add this window's class ot blur-background-exclude!
+      # And yeah, it's picom's doing. How to get around it? Add this window's class to blur-background-exclude!
       # That's what I did too and it works... until you meet another window, menu, dialog, etc... that doesn't
       # place nice with blur, and who would have thought, it's so common to use blur on everything, right??
 
