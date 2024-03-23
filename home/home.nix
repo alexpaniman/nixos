@@ -184,8 +184,6 @@ rec {
     backend = "glx";
     activeOpacity = 1;
     settings = {
-      blur = true;
-
       animations = true;
       animation-stiffness = 300.0;
       animation-dampening = 35.0;
