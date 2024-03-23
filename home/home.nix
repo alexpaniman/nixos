@@ -158,6 +158,8 @@ rec {
 
     settings = {
       window.padding = { x = 4; y = 4; };
+      window.opacity = 0.9;
+
       keyboard.bindings = [{
         key = "Return";
         mods = "Control|Shift";
