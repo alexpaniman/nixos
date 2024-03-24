@@ -215,7 +215,7 @@ rec {
     backend = "glx";
 
     settings = {
-      corner-radius = 12;
+      corner-radius = 5;
 
       blur = true;
       blur-method = "dual_kawase";
