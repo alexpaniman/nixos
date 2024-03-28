@@ -218,6 +218,7 @@
 
     # Main infrastructure programs
     git 
+    git-lfs
 
     # Basic cmdline tools
     killall
