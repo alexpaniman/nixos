@@ -267,9 +267,14 @@
     # Keyboard
     vial
 
-    glm
-    cglm
+    # VPN
+    openvpn
+    update-systemd-resolved
   ];
+
+  services.resolved = {
+    enable = true;
+  };
 
 
   documentation.dev.enable = true;
