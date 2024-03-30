@@ -223,33 +223,8 @@ rec {
       blur-method = "dual_kawase";
       blur-strength = "10";
 
-      # Picom developers did the stupidest thing ever by adding a rule to EXclude things from background blur,
-      # but not to INclude windows for background blur. So it goes like that: you enable blur and for some
-      # time everything seems fine, until you launch, let's say, a screenshoter, that now blurs your whole
-      # entire screen and you can't see anything, which is quite important for taking screenshots..
-
-      # And yeah, it's picom's doing. How to get around it? Add this window's class to blur-background-exclude!
-      # That's what I did too and it works... until you meet another window, menu, dialog, etc... that doesn't
-      # place nice with blur, and who would have thought, it's so common to use blur on everything, right??
-
-      # Much smarter thing would be to add JUST the things I want to blur: for me it's just the terminal, nothing
-      # else... But I found now way to do this in the documentation! What to do then, keep playing this game of
-      # looking up window type of everything with xprop and adding, adding, adding it to the list? I refuse!!
-
-      # Instead, I thought, I will just write a regex to match EVERYTHING EXCEPT the terminal, but what do you
-      # know, picom doesn't support negative lookahead, aha, and here I thought I was onto something!
-
-      # Still I don't give up that easily and instead just made a regex that matches every string that does not
-      # contain class name of my terminal "Alacritty", and, yeah, it's hella long, but, at least, it works.
-
-      # NOTE: for future me or other readers, I didn't actually write this by hand and instead used a website:
-      #       that did it for me: http://www.formauri.es/personal/pgimeno/misc/non-match-regex/?word=Alacritty
-      #       (I sincerely hope that it's not down at your time, future reader, if it is -- I'm sorry, you
-      #        try to find it or similar service by typing "extended regular expression that matches a string
-      #        that does not contain given word", that is if you still have search engines in the future)
-
       blur-background-exclude = [
-        "class_g ~= '^([^A]|A(A|l(A|a(A|c(A|r(A|i(A|t(A|tA)))))))*([^Al]|l([^Aa]|a([^Ac]|c([^Ar]|r([^Ai]|i([^At]|t([^At]|t[^Ay]))))))))*(A(A|l(A|a(A|c(A|r(A|i(A|t(A|tA)))))))*(l(a?|ac(r?|ri(t?|tt))))?)?$'"
+        "!(class_g ~= '^Alacritty$')"
       ];
     };
 
