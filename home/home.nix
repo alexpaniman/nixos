@@ -210,8 +210,6 @@ rec {
     };
   };
 
-  home.file.".icons/default".source = "${pkgs.vanilla-dmz}/share/icons/Vanilla-DMZ";
-
   services.picom = {
     enable = true;
     backend = "glx";
