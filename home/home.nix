@@ -79,6 +79,10 @@ rec {
     enable = true;
     userName = "alexpaniman";
     userEmail = "alexpaniman@gmail.com";
+
+    extraConfig = {
+      oh-my-zsh.hide-dirty = 1;
+    };
   };
 
   programs.zsh = {
@@ -92,8 +96,12 @@ rec {
     initExtra = ''
       bindkey '^H' backward-kill-word
       bindkey '5~' kill-word
+
       source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
       any-nix-shell zsh --info-right | source /dev/stdin
+
+      export DISABLE_MAGIC_FUNCTIONS=true
+      export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
     '';
 
     shellAliases = 
