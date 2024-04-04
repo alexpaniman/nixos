@@ -102,6 +102,13 @@ rec {
 
       export DISABLE_MAGIC_FUNCTIONS=true
       export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+
+      ff() {
+        target_directory="''$(${pkgs.fd}/bin/fd --hidden '.*' "''${1:-.}" | ${pkgs.fzf}/bin/fzf | xargs dirname 2>/dev/null)"
+        if [[ $? -eq 0 ]]; then
+           cd "$target_directory"
+        fi
+      }
     '';
 
     shellAliases = 
@@ -131,8 +138,8 @@ rec {
         # navigation
         ls = "${pkgs.eza}/bin/eza";
 
-        ff = ''cd "''$(${pkgs.fd}/bin/fd | ${pkgs.fzf}/bin/fzf | xargs dirname)"'';
-        fh = ''cd ~ && ff'';
+        fh = ''ff ~'';
+        fs = ''ff /'';
 
         e = "emacsclient --create-frame --no-wait --alternate-editor=''";
       };
