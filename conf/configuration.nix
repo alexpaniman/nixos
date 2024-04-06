@@ -320,6 +320,7 @@
     fira-code-symbols
     fira
     iosevka-comfy.comfy-motion
+    cascadia-code
   ];
 
   services.xserver.xrandrHeads = [

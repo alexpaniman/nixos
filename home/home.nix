@@ -172,6 +172,12 @@ rec {
     enable = true;
 
     settings = {
+      font = {
+        normal = {
+          family = "Cascadia Code";
+        };
+      };
+
       window.padding = { x = 4; y = 4; };
       window.opacity = 0.9;
 
