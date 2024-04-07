@@ -198,6 +198,7 @@
     texlive.combined.scheme-full
     onlyoffice-bin
     zathura
+    sioyek
 
     # Graphical environment
     rofi 
