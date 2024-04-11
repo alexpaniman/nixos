@@ -272,6 +272,9 @@
     # VPN
     openvpn
     update-systemd-resolved
+
+    gdb
+    sage
   ];
 
   services.resolved = {
