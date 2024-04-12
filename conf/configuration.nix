@@ -112,7 +112,6 @@
       };
     }; 
     displayManager = {
-      defaultSession = "none+xmonad";
       lightdm = {
         enable = true;
         greeters.enso = {
@@ -125,6 +124,10 @@
         nitrogen --restore
       '';
     };
+  };
+
+  services.displayManager = {
+    defaultSession = "none+xmonad";
   };
 
   hardware.nvidia = {
