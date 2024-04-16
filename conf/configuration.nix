@@ -278,6 +278,9 @@
 
     gdb
     sage
+
+    # Modelling
+    blender
   ];
 
   services.resolved = {
