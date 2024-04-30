@@ -278,7 +278,7 @@ rec {
     "emacs" = {
         source = builtins.fetchGit {
           url = "https://github.com/alexpaniman/panimacs";
-          rev = "b4d0b828c300fb7da49c8940c157b3907adfcea2";
+          rev = "859153e164a61557f81927a27e46b9d23f964796";
         };
         recursive = true;
     };
