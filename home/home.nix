@@ -199,16 +199,26 @@ rec {
 
   programs.emacs =
     let
-      emacs-overlay = import (fetchTarball {
-        url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
-        sha256 = "1jppksrfvbk5ypiqdz4cddxdl8z6zyzdb2srq8fcffr327ld5jj2";
-      });
       my-emacs = pkgs.emacs.override {
         withNativeCompilation = true;
         withSQLite3 = true;
         withTreeSitter = true;
         withWebP = true;
       };
+      # my-emacs = (pkgs.emacs.override {
+      #   withNativeCompilation = true;
+      #   withSQLite3 = true;
+      #   withTreeSitter = true;
+      #   withWebP = true;
+      # }).overrideAttrs (old: {
+      #   version = "commercial-emacs-git";
+      #   src = pkgs.fetchFromGitHub {
+      #     owner = "commercial-emacs";
+      #     repo = "commercial-emacs";
+      #     rev = "a98e5518a76d336dda16e0c8e622950ba2efb5c8";
+      #     sha256 = "sha256-yAnotska4K0128l8WI5dAbGNqran6yGPR0AHeYMlG+M=";
+      #   };
+      # });
       my-emacs-with-packages = (pkgs.emacsPackagesFor my-emacs).emacsWithPackages (epkgs: with epkgs; [
         vterm
         multi-vterm
