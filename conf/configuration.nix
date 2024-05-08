@@ -294,7 +294,6 @@
     update-systemd-resolved
 
     gdb
-    sage
 
     # Modelling
     blender
