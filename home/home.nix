@@ -23,6 +23,8 @@ rec {
     pkgs.ripgrep
     pkgs.fzf
 
+    pkgs.libnotify
+
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -311,6 +313,20 @@ rec {
     };
 
     vSync = true;
+  };
+
+  services.dunst = {
+    enable = true;
+
+    settings = {
+      global = {
+        frame_width = 1;
+        frame_color = "#f91c81ff";
+        background = "#1c1d20ff";
+        foreground = "#b6b7bcff";
+        timeout = 1;
+      };
+    };
   };
 
   # Let Home Manager install and manage itself.
