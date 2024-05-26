@@ -174,7 +174,7 @@
 
   users.users.alex = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "audio" "vboxusers" "networkmanager" ];
     packages = with pkgs; [];
   };
 
@@ -301,6 +301,9 @@
     # Nix ld tools
     self.inputs.nix-alien.packages.${system}.nix-alien
 
+    qemu
+    quickemu
+
     (let
       my_mathematica = mathematica.override {
         version = "13.2.1";
@@ -388,6 +391,10 @@
   # Open all the ports by disabling the firewall altogether
   networking.firewall.enable = false;
 
+
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.guest.enable = true;
+  virtualisation.virtualbox.host.enableExtensionPack = true;
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
