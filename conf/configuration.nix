@@ -396,6 +396,14 @@
   virtualisation.virtualbox.guest.enable = true;
   virtualisation.virtualbox.host.enableExtensionPack = true;
 
+  environment.etc."xdg/mimeapps.list" = {
+    text = ''
+        [Default Applications]
+        application/pdf=org.pwmt.zathura.desktop
+        video/mp4=mpv.desktop
+    '';
+  };
+
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
   #
