@@ -43,7 +43,7 @@
   '';
 
   
-  boot.kernelParams = [ "fbcon=rotate:1" ];
+  boot.kernelParams = [ "fbcon=rotate:1" "iommu=pt" "amd_iommu=on" ];
 
 
   programs.hyprland = {
