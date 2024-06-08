@@ -24,7 +24,6 @@
     openssl
     curl
     expat
-    # ...
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -45,22 +44,8 @@
   
   boot.kernelParams = [ "fbcon=rotate:1" "iommu=pt" "amd_iommu=on" ];
 
-
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
-  environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = "1";
-    NIXOS_OZON_WL = "1";
-  };
-
-  programs.sway.enable = true;
-
   # Make some extra kernel modules available to NixOS
-  boot.extraModulePackages = with config.boot.kernelPackages;
-    [ v4l2loopback.out ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback.out ];
 
   # Activate kernel modules (choose from built-ins and extra ones)
   boot.kernelModules = [
@@ -84,7 +69,7 @@
   '';
 
 
-  networking.hostName = "pcniman"; # Define your hostname.
+  networking.hostName = "nostradamus"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
