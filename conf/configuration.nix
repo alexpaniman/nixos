@@ -41,6 +41,8 @@
     GRUB_TIMEOUT_STYLE="hidden"
   '';
 
+  boot.blacklistedKernelModules = [ "pcspkr" ];
+
   
   boot.kernelParams = [ "fbcon=rotate:1" "iommu=pt" "amd_iommu=on" ];
 
@@ -155,7 +157,18 @@
     pulse.enable = true;
     jack.enable = true;
     wireplumber.enable = true;
+
+    extraConfig = {
+      pipewire = {
+        "99-no-bell-sound.conf" = {
+          "context.properties" = {
+            "module.x11.bell" = false;
+          };
+        };
+      };
+    };
   };
+
 
   users.users.alex = {
     isNormalUser = true;
