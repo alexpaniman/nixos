@@ -302,23 +302,23 @@
     qemu
     quickemu
 
-    (let
-      my_mathematica = mathematica.override {
-        version = "13.2.1";
-        source = pkgs.requireFile {
-          name = "Mathematica_13.2.1_LINUX.sh";
-          # Get this hash via a command similar to this:
-          # nix-store --query --hash \
-          # $(nix store add-path Mathematica_XX.X.X_BNDL_LINUX.sh --name 'Mathematica_XX.X.X_BNDL_LINUX.sh')
-          sha256 = "1661ra9c9lidswp9f2nps7iz9kq7fsgxd0x6kl7lv4d142fwkhdk";
-          message = ''
-            Your override for Mathematica includes a different src for the installer,
-            and it is missing.
-          '';
-          hashMode = "recursive";
-        };
-      };
-    in my_mathematica)
+    # (let
+    #   my_mathematica = mathematica.override {
+    #     version = "13.2.1";
+    #     source = pkgs.requireFile {
+    #       name = "Mathematica_13.2.1_LINUX.sh";
+    #       # Get this hash via a command similar to this:
+    #       # nix-store --query --hash \
+    #       # $(nix store add-path Mathematica_XX.X.X_BNDL_LINUX.sh --name 'Mathematica_XX.X.X_BNDL_LINUX.sh')
+    #       sha256 = "1661ra9c9lidswp9f2nps7iz9kq7fsgxd0x6kl7lv4d142fwkhdk";
+    #       message = ''
+    #         Your override for Mathematica includes a different src for the installer,
+    #         and it is missing.
+    #       '';
+    #       hashMode = "recursive";
+    #     };
+    #   };
+    # in my_mathematica)
   ];
 
   services.resolved = {
