@@ -172,7 +172,7 @@
 
   users.users.alex = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" "vboxusers" "networkmanager" ];
+    extraGroups = [ "wheel" "audio" "vboxusers" "networkmanager" "docker" ];
     packages = with pkgs; [];
   };
 
@@ -393,6 +393,15 @@
   virtualisation.virtualbox.host.enable = true;
   virtualisation.virtualbox.guest.enable = true;
   virtualisation.virtualbox.host.enableExtensionPack = true;
+
+  virtualisation.docker.enable = true;
+  virtualisation.docker.enableNvidia = true;
+
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
+
 
   environment.etc."xdg/mimeapps.list" = {
     text = ''
