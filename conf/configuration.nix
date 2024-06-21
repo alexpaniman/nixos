@@ -321,6 +321,12 @@
     # in my_mathematica)
   ];
 
+  services.ollama = {
+    enable = true;
+    acceleration = "cuda";
+  };
+
+
   services.resolved = {
     enable = true;
   };
