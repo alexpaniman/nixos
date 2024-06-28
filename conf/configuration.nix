@@ -302,6 +302,7 @@
     qemu
     quickemu
 
+
     # (let
     #   my_mathematica = mathematica.override {
     #     version = "13.2.1";
@@ -319,6 +320,8 @@
     #     };
     #   };
     # in my_mathematica)
+    sage
+
     # Hardware dependencies for CUDA packages
     cudatoolkit
     linuxPackages.nvidia_x11
