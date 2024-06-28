@@ -319,6 +319,19 @@
     #     };
     #   };
     # in my_mathematica)
+    # Hardware dependencies for CUDA packages
+    cudatoolkit
+    linuxPackages.nvidia_x11
+    xorg.libXi
+    xorg.libXmu
+    freeglut
+    xorg.libXext
+    xorg.libX11
+    xorg.libXv
+    xorg.libXrandr
+    zlib
+    libGLU
+    libGL
   ];
 
   services.ollama = {
