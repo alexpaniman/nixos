@@ -103,7 +103,7 @@
 
     xkb.layout = "us,ru";
     xkb.model = "pc105";
-    xkb.options = "grp:menu_toggle";
+    xkb.options = "grp:menu_toggle,compose:ralt";
 
     autoRepeatDelay = 300;
     autoRepeatInterval = 20;
