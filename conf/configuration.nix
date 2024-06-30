@@ -302,6 +302,11 @@
     qemu
     quickemu
 
+    # Proxy
+    nekoray
+
+    # Networking
+    iptables
 
     # (let
     #   my_mathematica = mathematica.override {
