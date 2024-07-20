@@ -145,6 +145,8 @@ rec {
           setopt PROMPT_SUBST
           PROMPT=$PROMPT'%{$(vterm_prompt_end)%}'
       fi
+
+      export PS1="%(?:%{$fg_bold[green]%}%1{+%} :%{$fg_bold[red]%}%1{x%} ) %{$fg[cyan]%}%c%{$reset_color%} \$(git_prompt_info)"
     '';
 
     shellAliases = 
