@@ -37,12 +37,10 @@ rec {
     # # fonts?
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
+    (pkgs.writeShellScriptBin "xdg-open-emacs" ''
+        target_file="$(readlink -f "$1")"
+        emacsclient --eval "(panimacs/xdg-open \"$target_file\")"
+    '')
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -328,6 +326,34 @@ rec {
         foreground = "#b6b7bcff";
         timeout = 1;
       };
+    };
+  };
+
+  xdg.desktopEntries = {
+    emacs = {
+      name = "Emacs (XDG-Open)";
+      genericName = "Text Editor";
+      exec = "xdg-open-emacs %F";
+      terminal = false;
+      categories = [ "Development" "TextEditor" ];
+      icon = "emacs";
+      mimeType = [
+        "text/english"
+        "text/plain"
+        "text/x-makefile"
+        "text/x-c++hdr"
+        "text/x-c++src"
+        "text/x-chdr"
+        "text/x-csrc"
+        "text/x-java"
+        "text/x-moc"
+        "text/x-pascal"
+        "text/x-tcl"
+        "text/x-tex"
+        "application/x-shellscript"
+        "text/x-c"
+        "text/x-c++"
+      ];
     };
   };
 
