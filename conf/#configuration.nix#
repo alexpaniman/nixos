@@ -289,7 +289,7 @@
 
     # VPN
     openvpn
-    #update-systemd-resolved
+    update-systemd-resolved
 
     gdb
 
@@ -373,9 +373,9 @@
   };
 
 
-  #services.resolved = {
-  #enable = true;
-  #};
+  services.resolved = {
+    enable = true;
+  };
 
 
   documentation.dev.enable = true;
@@ -428,7 +428,7 @@
       output = "DP-0";
       primary = true;
     }
-    
+  
     {
       output = "DP-2";
       monitorConfig = "Option \"Rotate\" \"right\"";
@@ -446,22 +446,12 @@
   virtualisation.virtualbox.guest.enable = true;
   virtualisation.virtualbox.host.enableExtensionPack = true;
 
-  virtualisation.docker = {
-	  enable = true;
-	  enableOnBoot = false;
-	  enableNvidia = true;
+  virtualisation.docker.enable = true;
+  virtualisation.docker.enableNvidia = true;
 
-	  rootless = {
-		  enable = true;
-		  setSocketVariable = true;
-      daemon.settings = {
-			  runtimes = {
-				  nvidia = {
-            path = "${pkgs.nvidia-docker}/bin/nvidia-container-runtime";
-          };
-			  };
-      };
-	  };
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
   };
 
 

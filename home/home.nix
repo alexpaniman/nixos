@@ -179,7 +179,8 @@ rec {
         fh = ''ff ~'';
         fs = ''ff /'';
 
-        e = "emacsclient --create-frame --no-wait --alternate-editor=''";
+        e = "emacsclient -nw -a '' -c";
+        ew = "emacsclient --create-frame --no-wait --alternate-editor=''";
       };
 
     history.size = 1000000;
