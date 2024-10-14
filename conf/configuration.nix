@@ -464,6 +464,8 @@
 	  };
   };
 
+  virtualisation.podman.enable = true;
+
 
   environment.etc."xdg/mimeapps.list" = {
     text = ''
