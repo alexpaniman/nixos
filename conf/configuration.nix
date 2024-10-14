@@ -141,6 +141,7 @@
     package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
 
+  hardware.nvidia-container-toolkit.enable = true;
 
   # Disable pulseaudio
   sound.enable = false;
@@ -449,7 +450,6 @@
   virtualisation.docker = {
 	  enable = true;
 	  enableOnBoot = false;
-	  enableNvidia = true;
 
 	  rootless = {
 		  enable = true;
