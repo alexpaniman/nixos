@@ -26,6 +26,7 @@ rec {
     pkgs.libnotify
 
     pkgs.mindustry
+    pkgs.emacs-lsp-booster
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -293,7 +294,7 @@ rec {
     "emacs" = {
         source = builtins.fetchGit {
           url = "https://github.com/alexpaniman/panimacs";
-          rev = "1ad342cb4c08940196c857bec1f4c3964fa3d359";
+          rev = "f16e72ee0f7150ff5d57c9d1984af9733f9a29e7";
         };
         recursive = true;
     };
