@@ -37,6 +37,8 @@ rec {
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    pkgs.corefonts
+    pkgs.vistafonts
 
     (pkgs.writeShellScriptBin "xdg-open-emacs" ''
         target_file="$(readlink -f "$1")"
