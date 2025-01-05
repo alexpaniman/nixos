@@ -144,7 +144,7 @@
   hardware.nvidia-container-toolkit.enable = true;
 
   # Disable pulseaudio
-  sound.enable = false;
+  # sound.enable = false;
   hardware.pulseaudio.enable = false;
 
   # Enable pipewire instead
