@@ -199,7 +199,7 @@
     # Conferencing
     xournalpp
     obs-studio
-    zoom-us
+    # zoom-us
 
     # Messaging
     telegram-desktop
