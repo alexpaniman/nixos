@@ -329,7 +329,7 @@
     sage
 
     # Hardware dependencies for CUDA packages
-    cudatoolkit
+    # cudatoolkit
     linuxPackages.nvidia_x11
     xorg.libXi
     xorg.libXmu
