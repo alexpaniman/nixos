@@ -98,6 +98,10 @@ rec {
     enableCompletion = true;
     syntaxHighlighting.enable = true;
 
+    initExtraFirst = ''
+      [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return 
+    '';
+
     initExtra = ''
       bindkey '^H' backward-kill-word
       bindkey '5~' kill-word
@@ -365,4 +369,23 @@ rec {
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  dconf.enable = true;
+  dconf.settings = {
+    "org/gnome/desktop/background" = {
+      picture-uri-dark = "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
+    };
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Fluent-Dark-compact";
+      package = pkgs.fluent-gtk-theme;
+    };
+  };
+
 }
