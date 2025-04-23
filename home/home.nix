@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, panimacs, ... }:
 
 rec {
   # Home Manager needs a bit of information about you and the paths it should
@@ -44,6 +44,8 @@ rec {
         target_file="$(readlink -f "$1")"
         emacsclient --eval "(panimacs/xdg-open \"$target_file\")"
     '')
+
+    panimacs.packages."${pkgs.system}".default
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -186,8 +188,8 @@ rec {
         fh = ''ff ~'';
         fs = ''ff /'';
 
-        e = "emacsclient -nw -a '' -c";
-        ew = "emacsclient --create-frame --no-wait --alternate-editor=''";
+        e = "panimacsclient -nw -a '' -c";
+        ew = "panimacsclient --create-frame --no-wait --alternate-editor=''";
       };
 
     history.size = 1000000;
@@ -300,7 +302,7 @@ rec {
     "emacs" = {
         source = builtins.fetchGit {
           url = "https://github.com/alexpaniman/panimacs";
-          rev = "f16e72ee0f7150ff5d57c9d1984af9733f9a29e7";
+          rev = "110ed41d0ae507c4a83afb271ee43b931ba51c06";
         };
         recursive = true;
     };

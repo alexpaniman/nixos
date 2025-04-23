@@ -8,9 +8,11 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    panimacs.url = "github:alexpaniman/bundled-emacs";
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, panimacs, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -20,6 +22,8 @@
     in {
       homeConfigurations."alex" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+
+        extraSpecialArgs = { inherit panimacs; };
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
