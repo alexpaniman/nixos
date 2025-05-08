@@ -304,7 +304,6 @@
     blender
 
     # Nix ld tools
-    self.inputs.nix-alien.packages.${system}.nix-alien
     self.inputs.zen-browser.packages.${system}.beta
 
     qemu
