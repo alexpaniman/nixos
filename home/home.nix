@@ -28,6 +28,10 @@ rec {
     pkgs.mindustry
     pkgs.emacs-lsp-booster
 
+    pkgs.fira-mono
+    pkgs.nerd-fonts.fira-code
+    pkgs.nerd-fonts.fira-mono
+
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -155,7 +159,7 @@ rec {
           PROMPT=$PROMPT'%{$(vterm_prompt_end)%}'
       fi
 
-      export PS1="%(?:%{$fg_bold[green]%}%1{+%} :%{$fg_bold[red]%}%1{x%} ) %{$fg[cyan]%}%c%{$reset_color%} \$(git_prompt_info)"
+      export PS1="%{$fg_bold[cyan]%}[%n@%m] %c%{$reset_color%} \$(git_prompt_info)%(?:%{$fg_bold[green]%}%1{$%}:%{$fg_bold[red]%}%1{$%})%{$reset_color%} "
     '';
 
     shellAliases = 

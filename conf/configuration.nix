@@ -174,7 +174,10 @@
 
   services.openssh = {
     enable = true;
-    permitRootLogin = "prohibit-password";  # Allow or restrict root login
+    permitRootLogin = "no";
+    forwardX11 = true;
+    passwordAuthentication = false;
+    kbdInteractiveAuthentication = false;
   };
 
   users.users.alex = {
@@ -186,6 +189,7 @@
   environment.systemPackages = with pkgs; [
     # The one and only
     emacs
+    mosh
 
     # Shell
     vim # i need a way to fix emacs without... emacs 
@@ -385,6 +389,10 @@
     acceleration = "cuda";
   };
 
+  services.zerotierone = {
+    enable = true;
+    joinNetworks = [ "8bd5124fd6fc2669" ];
+  };
 
   #services.resolved = {
   #enable = true;
