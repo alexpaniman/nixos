@@ -225,7 +225,7 @@
     mpv
 
     # Documents
-    #texlive.combined.scheme-full
+    texlive.combined.scheme-full
     onlyoffice-bin
     zathura
     sioyek
