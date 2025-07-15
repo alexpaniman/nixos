@@ -28,9 +28,8 @@ rec {
     pkgs.mindustry
     pkgs.emacs-lsp-booster
 
-    pkgs.fira-mono
-    pkgs.nerd-fonts.fira-code
-    pkgs.nerd-fonts.fira-mono
+    pkgs.fira-code-nerdfont
+    pkgs.htop
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -269,6 +268,70 @@ rec {
       }];
 
       colors = {
+#        primary = {
+#          background = "#eff1f5";
+#          foreground = "#4c4f69";
+#          dim_foreground = "#8c8fa1";
+#          bright_foreground = "#4c4f69";
+#        };
+#
+#        cursor = {
+#          text = "#eff1f5";
+#          cursor = "#dc8a78";
+#        };
+#
+#        vi_mode_cursor = {
+#          text = "#eff1f5";
+#          cursor = "#7287fd";
+#        };
+#
+#        search.matches = {
+#          foreground = "#eff1f5";
+#          background = "#6c6f85";
+#        };
+#
+#        search.focused_match = {
+#          foreground = "#eff1f5";
+#          background = "#40a02b";
+#        };
+#
+#        footer_bar = {
+#          foreground = "#eff1f5";
+#          background = "#6c6f85";
+#        };
+#
+#        hints.end = {
+#          foreground = "#eff1f5";
+#          background = "#df8e1d";
+#        };
+#
+#        selection = {
+#          text = "#eff1f5";
+#          background = "#dc8a78";
+#        };
+#
+#        normal = {
+#          black = "#bcc0cc";
+#          red = "#d20f39";
+#          green = "#40a02b";
+#          yellow = "#df8e1d";
+#          blue = "#1e66f5";
+#          magenta = "#ea76cb";
+#          cyan = "#179299";
+#          white = "#5c5f77";
+#        };
+        #
+        #        bright = {
+        #          black = "#acb0be";
+        #          red = "#d20f39";
+        #          green = "#40a02b";
+        #          yellow = "#df8e1d";
+        #          blue = "#1e66f5";
+        #          magenta = "#ea76cb";
+        #          cyan = "#179299";
+        #          white = "#6c6f85";
+        #        };
+
         primary = {
             background = "0x1c1d20";
             foreground = "0xfff1f3";
@@ -286,14 +349,14 @@ rec {
         };
 
         bright = {
-            black      = "0x72696a";
-            red        = "0xfd6883";
-            green      = "0xadda78";
-            yellow     = "0xf9cc6c";
-            blue       = "0xf38d70";
-            magenta    = "0xa8a9eb";
-            cyan       = "0x85dacc";
-            white      = "0xfff1f3";
+          black      = "0x72696a";
+          red        = "0xfd6883";
+          green      = "0xadda78";
+          yellow     = "0xf9cc6c";
+          blue       = "0xf38d70";
+          magenta    = "0xa8a9eb";
+          cyan       = "0x85dacc";
+          white      = "0xfff1f3";
         };
       };
     };

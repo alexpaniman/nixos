@@ -190,6 +190,7 @@
     # The one and only
     emacs
     mosh
+    tmux
 
     # Shell
     vim # i need a way to fix emacs without... emacs 
