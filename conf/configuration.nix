@@ -316,7 +316,7 @@
 
     # Proxy
     nekoray
-    hiddify
+    hiddify-app
 
     # Networking
     iptables
